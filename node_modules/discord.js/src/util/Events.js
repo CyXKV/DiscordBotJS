@@ -41,6 +41,10 @@
  * @property {string} GuildScheduledEventUpdate guildScheduledEventUpdate
  * @property {string} GuildScheduledEventUserAdd guildScheduledEventUserAdd
  * @property {string} GuildScheduledEventUserRemove guildScheduledEventUserRemove
+ * @property {string} GuildSoundboardSoundCreate guildSoundboardSoundCreate
+ * @property {string} GuildSoundboardSoundDelete guildSoundboardSoundDelete
+ * @property {string} GuildSoundboardSoundsUpdate guildSoundboardSoundsUpdate
+ * @property {string} GuildSoundboardSoundUpdate guildSoundboardSoundUpdate
  * @property {string} GuildStickerCreate stickerCreate
  * @property {string} GuildStickerDelete stickerDelete
  * @property {string} GuildStickerUpdate stickerUpdate
@@ -61,6 +65,7 @@
  * @property {string} MessageReactionRemoveEmoji messageReactionRemoveEmoji
  * @property {string} MessageUpdate messageUpdate
  * @property {string} PresenceUpdate presenceUpdate
+ * @property {string} SoundboardSounds soundboardSounds
  * @property {string} ShardDisconnect shardDisconnect
  * @property {string} ShardError shardError
  * @property {string} ShardReady shardReady
@@ -69,6 +74,9 @@
  * @property {string} StageInstanceCreate stageInstanceCreate
  * @property {string} StageInstanceDelete stageInstanceDelete
  * @property {string} StageInstanceUpdate stageInstanceUpdate
+ * @property {string} SubscriptionCreate subscriptionCreate
+ * @property {string} SubscriptionUpdate subscriptionUpdate
+ * @property {string} SubscriptionDelete subscriptionDelete
  * @property {string} ThreadCreate threadCreate
  * @property {string} ThreadDelete threadDelete
  * @property {string} ThreadListSync threadListSync
@@ -77,6 +85,7 @@
  * @property {string} ThreadUpdate threadUpdate
  * @property {string} TypingStart typingStart
  * @property {string} UserUpdate userUpdate
+ * @property {string} VoiceChannelEffectSend voiceChannelEffectSend
  * @property {string} VoiceServerUpdate voiceServerUpdate
  * @property {string} VoiceStateUpdate voiceStateUpdate
  * @property {string} Warn warn
@@ -128,6 +137,10 @@ module.exports = {
   GuildScheduledEventUpdate: 'guildScheduledEventUpdate',
   GuildScheduledEventUserAdd: 'guildScheduledEventUserAdd',
   GuildScheduledEventUserRemove: 'guildScheduledEventUserRemove',
+  GuildSoundboardSoundCreate: 'guildSoundboardSoundCreate',
+  GuildSoundboardSoundDelete: 'guildSoundboardSoundDelete',
+  GuildSoundboardSoundsUpdate: 'guildSoundboardSoundsUpdate',
+  GuildSoundboardSoundUpdate: 'guildSoundboardSoundUpdate',
   GuildStickerCreate: 'stickerCreate',
   GuildStickerDelete: 'stickerDelete',
   GuildStickerUpdate: 'stickerUpdate',
@@ -148,6 +161,7 @@ module.exports = {
   MessageReactionRemoveEmoji: 'messageReactionRemoveEmoji',
   MessageUpdate: 'messageUpdate',
   PresenceUpdate: 'presenceUpdate',
+  SoundboardSounds: 'soundboardSounds',
   Raw: 'raw',
   ShardDisconnect: 'shardDisconnect',
   ShardError: 'shardError',
@@ -157,6 +171,9 @@ module.exports = {
   StageInstanceCreate: 'stageInstanceCreate',
   StageInstanceDelete: 'stageInstanceDelete',
   StageInstanceUpdate: 'stageInstanceUpdate',
+  SubscriptionCreate: 'subscriptionCreate',
+  SubscriptionUpdate: 'subscriptionUpdate',
+  SubscriptionDelete: 'subscriptionDelete',
   ThreadCreate: 'threadCreate',
   ThreadDelete: 'threadDelete',
   ThreadListSync: 'threadListSync',
@@ -165,6 +182,7 @@ module.exports = {
   ThreadUpdate: 'threadUpdate',
   TypingStart: 'typingStart',
   UserUpdate: 'userUpdate',
+  VoiceChannelEffectSend: 'voiceChannelEffectSend',
   VoiceServerUpdate: 'voiceServerUpdate',
   VoiceStateUpdate: 'voiceStateUpdate',
   Warn: 'warn',
