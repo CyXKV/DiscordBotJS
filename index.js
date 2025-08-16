@@ -11,11 +11,8 @@ client.commands.set(data.name, { data, execute });
 client.login(process.env.TOKEN);
 
 client.once('ready', async () => {
-    console.log("once")
     for (const command of client.commands.values()) {
-        console.log("for")
         try {
-            console.log("try")
             await client.application.commands.create(command.data.toJSON(), process.env.GUILD_ID);
             console.log(`Команда /${command.data.name} зарегистрирована!`);
         } catch (err) {
