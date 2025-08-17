@@ -1,4 +1,4 @@
-import { Client, GatewayIntentBits, WebhookClient, EmbedBuilder  } from "discord.js";
+import { Client, GatewayIntentBits, WebhookClient } from "discord.js";
 import dotenv from "dotenv";
 dotenv.config();
 const client = new Client({
