@@ -1,14 +1,22 @@
+import fs from 'fs';
 import { Collection, Client, GatewayIntentBits } from 'discord.js'
-import { data, execute } from './commands/swap.js'
 import dotenv from "dotenv";
+import { watcher } from "./actions/channelwatcher.js";
+
 dotenv.config();
 
 const client = new Client({
 			intents: [GatewayIntentBits.Guilds]
 	});
 client.commands = new Collection();
-client.commands.set(data.name, { data, execute });
 client.login(process.env.TOKEN);
+
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+for (const file of commandFiles){
+  const command = await import (`./commands/${file}`);
+  client.commands.set(command.data.name, {  data: command.data, execute: command.execute });
+}
+
 
 client.once('ready', async () => {
     for (const command of client.commands.values()) {
@@ -25,10 +33,18 @@ client.once('ready', async () => {
 client.on('interactionCreate', async interaction => {
   if (!interaction.isChatInputCommand()) return;
 
-  if (interaction.commandName === 'swap') {
-    await execute(interaction); // твоя функция
+  const command = await client.commands.get(interaction.commandName);
+
+  if (!command) return;
+
+  try{
+    await command.execute(interaction);
+  } catch (error) {
+    console.error(error);
   }
 });
+
+watcher()
 
 // 	client.on("messageCreate", async message => {
 // 		let currentChannel = message.member.voice.channel;

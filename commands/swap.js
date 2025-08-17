@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, PermissionFlagsBits, Client, GatewayIntentBits, ChannelType } from 'discord.js'
+import { SlashCommandBuilder, Client, GatewayIntentBits } from 'discord.js'
 import { swapMembers } from '../interactions/swapinteraction.js';
 import dotenv from "dotenv";
 	dotenv.config();
@@ -20,7 +20,7 @@ export const data = new SlashCommandBuilder()
 											option.setName('count')
 												.setDescription('Сколько раз переместить')
 												.setRequired(true))
-        .setDefaultMemberPermissions(PermissionFlagsBits.MoveMembers);
+        .setDefaultMemberPermissions(null);
 
     export async function execute(interaction) {
 				let count = interaction.options.getInteger('count');
